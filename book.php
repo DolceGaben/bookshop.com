@@ -47,8 +47,13 @@
 	</header>
 	<main>
 		<div class="main-books">
-			
-		</div>
+            		<div class="block-book">
+                		<div class="book-image">
+                		</div>
+                		<div class="book-content">
+                		</div>
+            		</div>
+        	</div>
 
 	</main>
 	</body>
