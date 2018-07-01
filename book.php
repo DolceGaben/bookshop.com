@@ -1,3 +1,18 @@
+<?php
+session_start();
+require "includes/db.php";
+
+if(!isset($_SESSION["username"])){
+   
+     header("location:login.php");
+    
+    }
+
+  	
+
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,24 +51,56 @@
 </div>
 		<nav>
 			<div class="navigationpanel" id="mynavigationpanel">
-			 <a href="home_test.php"><i class="fa fa-home"></i> Home</a>
-			 <a href="#"><i class="fa fa-book"></i> Books</a>
-			  <a href="#"><i class="fa fa-bookmark"></i> My Books</a>
-			 <a href="#"><i class="fa fa-question-circle"></i> About</a>
+			 <a href="home.php"><i class="fa fa-home"></i> Home</a>
+			 <a href="#book.php"><i class="fa fa-book"></i> Books</a>
+			  <a href="mybooks.php"><i class="fa fa-bookmark"></i> My Books</a>
+			 <a href="home.php#about"><i class="fa fa-question-circle"></i> About</a>
+			 <a href="logout.php"><i class="fa fa-question-circle"></i> Logout</a>
 			 <a href="#" id = "menu" class="menu_icon"><i class="fa fa-navicon"></i></a>
 			
 			</div>
 		</nav>
 	</header>
 	<main>
-		<div class="main-books">
+
+		<?php
+        $sql = "SELECT * FROM Books";
+        $result = $connection_to_server->query($sql); 
+        ?>
+
+
+        <?php
+
+        	while ($book = mysqli_fetch_assoc($result) )
+        	 {
+
+        	?>
+
+        	<div class="main-books">
             		<div class="block-book">
                 		<div class="book-image">
+                			<img src=<?php echo $book['image']; ?> alt="book_ab">
                 		</div>
                 		<div class="book-content">
+                			<div><p>Title: <?php echo $book['title']; ?></p></div><br>
+                			<div><p>Genre: <?php echo $book['genre'];?></p></div><br>
+                			<div><p>Author: <?php echo $book['author'];?></p></div><br>
+                			<div><p>Price: <?php echo $book['price'];?></p></div><br>
+                			 <a href="buybook.php?id=<?php echo $book['id']; ?>">add</a><br>
+                			 <a href="aboutbook.php?id=<?php echo $book['id']; ?>">more..</a>
+
+                			
+
+                		
                 		</div>
             		</div>
-        	</div>
 
+        	</div>
+        	<?php
+        	}
+        	?>
+		
+
+        	
 	</main>
 	</body>

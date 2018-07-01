@@ -1,14 +1,9 @@
 <?php
 session_start();
 require "includes/db.php";
-
-if(!isset($_SESSION["username"])){
-   
-     header("location:login.php");
-    
-    }
-
+require "includes/checklogin.php";
 ?>
+
 
 
 <!DOCTYPE html>
@@ -61,19 +56,19 @@ if(!isset($_SESSION["username"])){
     <main>
 
         <?php
-        $current_user = $_SESSION["username"];
-        $sql = "SELECT book_id, title, image, genre, author, price, description FROM Books as bk INNER JOIN MyBooks as mb ON bk.id = mb.book_id WHERE user_id = '$current_user' ";
+        $id = $connection_to_server->real_escape_string($_GET['id']);
+        $sql = "SELECT * FROM Books WHERE id ='$id'";
         $result = $connection_to_server->query($sql); 
         ?>
 
-         
+
         <?php
 
             while ($book = mysqli_fetch_assoc($result) )
              {
 
             ?>
-           
+
             <div class="main-books">
                     <div class="block-book">
                         <div class="book-image">
@@ -84,7 +79,8 @@ if(!isset($_SESSION["username"])){
                             <div><p>Genre: <?php echo $book['genre'];?></p></div><br>
                             <div><p>Author: <?php echo $book['author'];?></p></div><br>
                             <div><p>Price: <?php echo $book['price'];?></p></div><br>
-                             <a href="aboutbook.php?id=<?php echo $book['book_id']; ?>">more..</a>
+                            <div><p>Description: <?php echo $book['description'];?></p></div>
+
 
                             
 
@@ -92,8 +88,7 @@ if(!isset($_SESSION["username"])){
                         </div>
                     </div>
 
-            
-        </div>
+            </div>
             <?php
             }
             ?>

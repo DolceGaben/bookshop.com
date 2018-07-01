@@ -2,13 +2,11 @@
 session_start();
 require "includes/db.php";
 
-$_SESSION['message'] = '';
-
-
 if(isset($_SESSION["username"])){
 	// вывод "Session is set"; // в целях проверки
-	header("Location: welcome.php");
+	header("Location:book.php");
 	}
+
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
@@ -29,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
        //  session_register("myusername");
          $_SESSION['username'] = $myusername;
          
-         header("location: welcome.php");
+         header("location: book.php");
       }else {
          echo  "Your Login Name or Password is invalid";
       }
@@ -75,10 +73,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
       <nav>
          <div class="navigationpanel" id="mynavigationpanel">
-          <a href="home_test.php"><i class="fa fa-home"></i> Home</a>
-          <a href="#"><i class="fa fa-book"></i> Books</a>
+          <a href="home.php"><i class="fa fa-home"></i> Home</a>
+          <a href="#book.php"><i class="fa fa-book"></i> Books</a>
            <a href="#"><i class="fa fa-bookmark"></i> My Books</a>
-          <a href="#"><i class="fa fa-question-circle"></i> About</a>
+          <a href="home.php#about"><i class="fa fa-question-circle"></i> About</a>
           <a href="#" id = "menu" class="menu_icon"><i class="fa fa-navicon"></i></a>
          
          </div>

@@ -7,7 +7,7 @@ $_SESSION['message'] = '';
 
 if(isset($_SESSION["username"])){
   // вывод "Session is set"; // в целях проверки
-  header("Location: welcome.php");
+  header("Location: book.php");
   }
 //the form has been submitted with post
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 else {
                     $_SESSION['message'] = 'User could not be added to the database!';
                 }
-                $mysqli->close();          
+                $connection_to_server->close();          
             }
             else {
         $_SESSION['message'] = 'Two passwords do not match!';
@@ -84,10 +84,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 		<nav>
 			<div class="navigationpanel" id="mynavigationpanel">
-			 <a href="home_test.php"><i class="fa fa-home"></i> Home</a>
-			 <a href="#"><i class="fa fa-book"></i> Books</a>
+			 <a href="home.php"><i class="fa fa-home"></i> Home</a>
+			 <a href="#book.php"><i class="fa fa-book"></i> Books</a>
 			  <a href="#"><i class="fa fa-bookmark"></i> My Books</a>
-			 <a href="#"><i class="fa fa-question-circle"></i> About</a>
+			 <a href="home.php#about"><i class="fa fa-question-circle"></i> About</a>
 			 <a href="#" id = "menu" class="menu_icon"><i class="fa fa-navicon"></i></a>
 			
 			</div>
