@@ -2,7 +2,8 @@
 session_start();
 require "includes/db.php";
 require "includes/checklogin.php";
-    
+ 
+
 
     $id = $connection_to_server->real_escape_string($_GET['id']);
     $current_user = $_SESSION["username"];
@@ -11,7 +12,8 @@ require "includes/checklogin.php";
                         . " VALUES (NULL, '$current_user', '$id')" ;
 
 		 if ($connection_to_server->query($sql) === true){
-                    echo "Succesful! Added to the database!";
+
+                    header("location: book.php");
 
                   
                 }
@@ -20,8 +22,8 @@ require "includes/checklogin.php";
                 }
 
 
-                $connection_to_server->close();   
-  	 
+                $connection_to_server->close(); 
 
+  	  
     
 ?>
