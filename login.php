@@ -21,10 +21,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       
       $count = mysqli_num_rows($result);
       
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
       if($count == 1) {
-       //  session_register("myusername");
+       
          $_SESSION['username'] = $myusername;
          
          header("location: book.php");
@@ -37,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    
 
 ?>
+
 <!DOCTYPE html>
 <head>
    <meta charset="UTF-8">
@@ -51,37 +50,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </head>
 <body>
-   <header>
-      <!--<div class="store_logo" id="logo">&#9900 Book Mag!c Store &#9900</div> -->
-      <div class="cssload-preloader">
-      <span>M</span>
-      <span>a</span>
-      <span>g</span>
-      <span>!</span>
-      <span>c</span>
-      <span> </span>
-      <span>B</span>
-      <span>o</span>
-      <span>o</span>
-      <span>k</span>
-      <span> </span>
-      <span>S</span>
-      <span>h</span>
-      <span>o</span>
-      <span>p</span>
 
-</div>
-      <nav>
-         <div class="navigationpanel" id="mynavigationpanel">
-          <a href="home.php"><i class="fa fa-home"></i> Home</a>
-          <a href="#book.php"><i class="fa fa-book"></i> Books</a>
-           <a href="#"><i class="fa fa-bookmark"></i> My Books</a>
-          <a href="home.php#about"><i class="fa fa-question-circle"></i> About</a>
-          <a href="#" id = "menu" class="menu_icon"><i class="fa fa-navicon"></i></a>
-         
-         </div>
-      </nav>
-   </header>
+   <?php require "header.php"?>
 
    <div class="body-content">
       

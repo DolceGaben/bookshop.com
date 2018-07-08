@@ -46,8 +46,9 @@ document.querySelector('#read').innerHTML = letters.randomColor();
 
 
 menu.onclick = function showMenu(){
-  var x = document.getElementByClassName('navigationpanel');
-  conole.log(x);
+  console.log('works');
+  var x = document.getElementById('mynavigationpanel');
+  
   if(x.className === "navigationpanel"){
     x.className += " responsive";
   }else{

@@ -67,4 +67,5 @@ require "includes/checklogin.php";
 
         	
 	</main>
+    <script src="script.js"></script>
 	</body>
