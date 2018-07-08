@@ -1,7 +1,6 @@
 <?php 
 session_start(); 
 require "includes/db.php";
-$_SESSION['message'] = '';
 
 if($_SESSION["username"] == "admin"){
    
