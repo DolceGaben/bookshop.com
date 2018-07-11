@@ -20,7 +20,6 @@ require "includes/checklogin.php";
 
 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
 		<?php require "header.php"?>
@@ -50,7 +49,8 @@ require "includes/checklogin.php";
                 			<div><p>Genre: <?php echo $book['genre'];?></p></div><br>
                 			<div><p>Author: <?php echo $book['author'];?></p></div><br>
                 			<div><p>Price: <?php echo $book['price'];?></p></div><br>
-                			 <a href="buybook.php?id=<?php echo $book['id']; ?>">add</a><br>
+                            <div id="buy-status-<?php echo $book['id']; ?>"></div><br>
+                			 <button onclick="onclickAddBook('<?php echo $book['id'];?>')" id ="addbook">Add book</button><br>
                 			 <a href="aboutbook.php?id=<?php echo $book['id']; ?>">more..</a>
 
                 			
@@ -68,4 +68,5 @@ require "includes/checklogin.php";
         	
 	</main>
     <script src="script.js"></script>
+    <script src="ajax.js"></script>
 	</body>

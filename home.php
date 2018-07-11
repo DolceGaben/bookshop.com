@@ -37,6 +37,7 @@
 	
 		</div>
 	</main>
+<script src="script_home.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

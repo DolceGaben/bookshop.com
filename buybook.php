@@ -12,8 +12,9 @@ require "includes/checklogin.php";
                         . " VALUES (NULL, '$current_user', '$id')" ;
 
 		 if ($connection_to_server->query($sql) === true){
+                    echo "succesful";
 
-                    header("location: book.php");
+                    //header("location: book.php");
 
                   
                 }
