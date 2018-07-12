@@ -50,7 +50,7 @@ require "includes/checklogin.php";
                 			<div><p>Author: <?php echo $book['author'];?></p></div><br>
                 			<div><p>Price: <?php echo $book['price'];?></p></div><br>
                             <div id="buy-status-<?php echo $book['id']; ?>"></div><br>
-                			 <button onclick="onclickAddBook('<?php echo $book['id'];?>')" id ="addbook">Add book</button><br>
+                			 <button class="button-add" onclick="onclickAddBook('<?php echo $book['id'];?>')" id ="addbook">Add book</button><br>
                 			 <a href="aboutbook.php?id=<?php echo $book['id']; ?>">more..</a>
 
                 			

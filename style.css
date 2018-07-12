@@ -163,7 +163,7 @@ input[type="text"], input[type = "email"], input[type="password"]
 .main-books{
 	margin: 5% auto;
 	width: 60vw;
-	height: 30vh;
+	height: 60vh;
 	
 }
 .main-books .block-book{
@@ -195,7 +195,7 @@ input[type="text"], input[type = "email"], input[type="password"]
 }
 .block-book .book-image img{
 	width: 100%;
-    height: 100%;   
+    height: 100%;  
 }
 .block-book .book-content{
 	position: absolute;

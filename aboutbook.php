@@ -11,7 +11,7 @@ require "includes/checklogin.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>BookMag!c</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/header.css">
     <link rel="stylesheet" type="text/css" href="styles/logo.css">
 
